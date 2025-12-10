@@ -21,7 +21,6 @@ if (isset($_GET["edit"])) {
     $book = mysqli_fetch_assoc($result);
 }
 
-// -------------------------------
 // If update form is submitted
 // -------------------------------
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["update"])) {
