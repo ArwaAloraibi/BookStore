@@ -1,5 +1,3 @@
-
-
 <?php
 session_start();
 require_once "../../includes/db.php";
@@ -12,33 +10,44 @@ if (!isset($_SESSION["admin"])) {
 $message = "";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
     $isbn = trim($_POST["isbn"]);
     $title = trim($_POST["title"]);
     $year = trim($_POST["year"]);
     $description = trim($_POST["description"]);
 
-    // Validate
+    // Required fields check
     if (empty($isbn) || empty($title) || empty($year) || empty($description)) {
         $message = "All fields are required!";
-    } else {
+    } 
+    else if (!isset($_FILES["image"]) || $_FILES["image"]["error"] !== 0) {
+        $message = "Image upload failed!";
+    }
+    else {
+
+        // Handle image upload
         $targetDir = "../../images/";
-        $image = $isbn . ".jpg"; 
+        $image = $isbn . ".jpg";   
         $targetFile = $targetDir . $image;
-       
-        move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile);
 
-       $sql = "INSERT INTO books (isbn, title, year, image, description)
-                VALUES ('$isbn', '$title', '$year', '$image', '$description')";
-
-        if (mysqli_query($conn, $sql)) {
-            $message = "Book added successfully!";
+        // Move the uploaded file
+        if (!move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
+            $message = "Error uploading image file!";
         } else {
-            $message = "Error: ISBN already exists!";
+
+            // Insert into database
+            $sql = "INSERT INTO books (isbn, title, year, image, description)
+                    VALUES ('$isbn', '$title', '$year', '$image', '$description')";
+
+            if (mysqli_query($conn, $sql)) {
+                $message = "Book added successfully!";
+            } else {
+                $message = "Error: ISBN already exists!";
+            }
         }
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 <body>
@@ -51,11 +60,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     ISBN: <input type="text" name="isbn" required><br><br>
     Title: <input type="text" name="title" required><br><br>
     Year: <input type="number" name="year" required><br><br>
-    Description:<br>
-    <textarea name="description" rows="4" cols="40" required></textarea><br><br>
 
     Image: <input type="file" name="image" accept="image/*" required><br><br>
 
+    Description:<br>
+    <textarea name="description" rows="4" cols="40" required></textarea><br><br>
 
     <button type="submit">Add Book</button>
 </form>
