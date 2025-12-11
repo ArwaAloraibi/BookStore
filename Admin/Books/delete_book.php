@@ -10,7 +10,7 @@ if (!isset($_SESSION["admin"])) {
 if (isset($_GET["delete"])) {
     $isbn = $_GET["delete"];
     mysqli_query($conn, "DELETE FROM books WHERE isbn='$isbn'");
-    header("Location: delete_books.php");
+    header("Location: delete_book.php");
 }
 
 $result = mysqli_query($conn, "SELECT * FROM books");

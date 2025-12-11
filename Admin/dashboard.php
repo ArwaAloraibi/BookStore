@@ -15,7 +15,6 @@ if (!isset($_SESSION["admin"])) {
 <a href="Books/add_book.php">Add Book</a><br>
 <a href="Books/edit_book.php">Edit Books</a><br>
 <a href="Books/delete_book.php">Delete Books</a><br>
-<a href="Orders/update_status.php">Update Order Status</a><br>
 <a href="Orders/view_orders.php">View Orders</a><br>
 <a href="logout.php">Logout</a>
 
