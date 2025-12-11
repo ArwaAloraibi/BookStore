@@ -1,7 +1,6 @@
 <?php
 require_once "../includes/db.php";
 
-// جلب جميع الكتب
 $result = mysqli_query($conn, "SELECT * FROM books ORDER BY year DESC");
 ?>
 <!DOCTYPE html>

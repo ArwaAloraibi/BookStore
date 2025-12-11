@@ -10,9 +10,7 @@ if (!isset($_SESSION["admin"])) {
 $message = "";
 $editing = false; // to know if we are in edit mode
 
-// -------------------------------
-// If "edit" button clicked
-// -------------------------------
+
 if (isset($_GET["edit"])) {
     $editing = true;
     $isbn = $_GET["edit"];
@@ -21,8 +19,7 @@ if (isset($_GET["edit"])) {
     $book = mysqli_fetch_assoc($result);
 }
 
-// If update form is submitted
-// -------------------------------
+
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["update"])) {
     $isbn = $_POST["isbn"];
     $title = $_POST["title"];
@@ -43,7 +40,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["update"])) {
     }
 }
 
-// Get books for display
 $books = mysqli_query($conn, "SELECT * FROM books ORDER BY year DESC");
 ?>
 <!DOCTYPE html>
@@ -58,9 +54,7 @@ $books = mysqli_query($conn, "SELECT * FROM books ORDER BY year DESC");
 
 <?php if ($editing === false): ?>
 
-<!-- -------------------------------
-     BOOK LIST TABLE
--------------------------------- -->
+
 <table border="1" cellpadding="10">
     <tr>
         <th>ISBN</th>
@@ -89,9 +83,7 @@ $books = mysqli_query($conn, "SELECT * FROM books ORDER BY year DESC");
 
 <?php else: ?>
 
-<!-- -------------------------------
-     EDIT FORM
--------------------------------- -->
+
 <h3>Editing Book: <?php echo $book['isbn']; ?></h3>
 
 <form method="POST">

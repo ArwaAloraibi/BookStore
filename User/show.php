@@ -7,7 +7,6 @@ if (!isset($_GET['isbn'])) {
 
 $isbn = $_GET['isbn'];
 
-// استخدام Prepared Statement لجلب الكتاب (للحماية)
 $stmt = mysqli_prepare($conn, "SELECT * FROM books WHERE isbn=?");
 mysqli_stmt_bind_param($stmt, "s", $isbn);
 mysqli_stmt_execute($stmt);

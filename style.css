@@ -1,50 +1,46 @@
-/* ====== General Theme ====== */
 body {
     margin: 0;
     padding: 40px;
     font-family: "Georgia", serif;
     background: linear-gradient(180deg, #1d1a3a 0%, #0b0920 100%);
-    color: #f7d98c;  /* warm gold like the Harry Potter title */
+    color: #f7d98c;  
     display: flex;
-    flex-direction: column;  /* stack elements vertically */
-    align-items: flex-start; /* left-align by default */
+    flex-direction: column;  
+    align-items: flex-start; 
 }
 
-/* ====== Title ====== */
+
 .back {
-    font-size: 18px;  /* smaller heading */
+    font-size: 18px;  
     margin: 10px 0;
-    display: inline-block;  /* keeps border tight around text */
+    display: inline-block;  
     border: 2px solid rgba(120, 80, 255, 0.15);
     padding: 5px 10px;
     text-align: left;
-    color: #000000;  /* black text */
-    text-shadow: none;  /* remove glow for cleaner black text */
-    border-radius: 6px;  /* optional rounded corners */
+    color: #000000;  
+    text-shadow: none;  
+    border-radius: 6px;  
 }
 
 
-/* ====== Book Container ====== */
 .book-list {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;  /* left-align book items */
+    align-items: flex-start;  
     width: 100%;
 }
 
-/* ====== Individual Book Card ====== */
 .book-item {
     border: 1px solid #ccc;
     padding: 10px;
     margin: 10px 0;
     display: flex;
     align-items: center;
-    gap: 15px;  /* space between image and text */
-    background: rgba(255, 255, 255, 0.05); /* subtle transparent background */
+    gap: 15px;  
+    background: rgba(255, 255, 255, 0.05); 
     border-radius: 8px;
 }
 
-/* ====== Links (Buttons) ====== */
 a {
     display: inline-block;
     margin: 12px 0;
@@ -65,7 +61,6 @@ a:hover {
     transform: scale(1.05);
 }
 
-/* ====== Magical Glow Effect ====== */
 body::before {
     content: "";
     position: fixed;

@@ -16,7 +16,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $year = trim($_POST["year"]);
     $description = trim($_POST["description"]);
 
-    // Required fields check
     if (empty($isbn) || empty($title) || empty($year) || empty($description)) {
         $message = "All fields are required!";
     } 
@@ -25,17 +24,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
     else {
 
-        // Handle image upload
         $targetDir = "../../images/";
         $image = $isbn . ".jpg";   
         $targetFile = $targetDir . $image;
 
-        // Move the uploaded file
         if (!move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
             $message = "Error uploading image file!";
         } else {
 
-            // Insert into database
             $sql = "INSERT INTO books (isbn, title, year, image, description)
                     VALUES ('$isbn', '$title', '$year', '$image', '$description')";
 
