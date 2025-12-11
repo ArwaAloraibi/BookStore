@@ -6,6 +6,7 @@ $result = mysqli_query($conn, "SELECT * FROM books ORDER BY year DESC");
 ?>
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" href="../style.css">
 <head>
     <title>Book Store</title>
 </head>

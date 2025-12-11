@@ -41,8 +41,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Place Order</title>
+    <title>Place Order</title>        <link rel="stylesheet" href="../style.css">
+
 </head>
 <body>
 <h2>Order Book: <?php echo htmlspecialchars($book_title); ?></h2>

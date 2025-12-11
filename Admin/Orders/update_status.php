@@ -20,6 +20,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 <!DOCTYPE html>
 <html>
+        <link rel="stylesheet" href="../../style.css">
+
 <body>
 
 <h2>Update Order Status</h2>

@@ -18,6 +18,8 @@ $result = mysqli_query($conn, "SELECT * FROM books");
 
 <!DOCTYPE html>
 <html>
+    <link rel="stylesheet" href="../../style.css">
+
 <body>
 
 <h2>Delete Books</h2>

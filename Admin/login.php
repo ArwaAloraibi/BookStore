@@ -27,8 +27,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 <!DOCTYPE html>
 <html>
+    <link rel="stylesheet" href="../style.css">
+
 <body>
 <h2>Admin Login</h2>
+
 
 <form method="POST">
     <input type="text" name="username" placeholder="Username" required><br><br>

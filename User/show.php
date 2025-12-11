@@ -19,6 +19,7 @@ if (!$book = mysqli_fetch_assoc($result)) {
 ?>
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" href="../style.css">
 <head>
     <title><?php echo $book['title']; ?></title>
 </head>

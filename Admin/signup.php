@@ -46,6 +46,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <html>
 <head>
     <title>Admin Signup</title>
+    <link rel="stylesheet" href="../style.css">
+
 </head>
 <body>
 <h2>Admin Signup</h2>

@@ -48,6 +48,8 @@ $books = mysqli_query($conn, "SELECT * FROM books ORDER BY year DESC");
 ?>
 <!DOCTYPE html>
 <html>
+    <link rel="stylesheet" href="../../style.css">
+
 <body>
 
 <h2>Edit Books</h2>

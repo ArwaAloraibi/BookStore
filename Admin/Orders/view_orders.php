@@ -12,6 +12,8 @@ $result = mysqli_query($conn, "SELECT * FROM orders ORDER BY order_id DESC");
 
 <!DOCTYPE html>
 <html>
+        <link rel="stylesheet" href="../../style.css">
+
 <body>
 
 <h2>All Orders</h2>
