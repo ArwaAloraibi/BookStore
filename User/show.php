@@ -25,7 +25,7 @@ if (!$book = mysqli_fetch_assoc($result)) {
 </head>
 <body>
 
-<a href="index.php">Back to Book List</a>
+<a class="back" href="index.php">Back to Book List</a>
 <hr>
 <h2><?php echo $book['title']; ?></h2>
 
